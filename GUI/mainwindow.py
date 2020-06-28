@@ -2,9 +2,9 @@
 # author: Yabin Zheng
 # Email: sczhengyabin@hotmail.com
 
-from ui_mainwindow import Ui_MainWindow
-from ui_about import Ui_Dialog_about
-import utils
+from .ui_mainwindow import Ui_MainWindow
+from .ui_about import Ui_Dialog_about
+from .utils import gen_valid_dir_name_for_keywords,AppConfig,gen_keywords_list_from_str,gen_keywords_list_from_file
 
 from PyQt5.Qt import *
 from PyQt5.QtTest import QTest
@@ -12,8 +12,8 @@ from threading import Thread
 import shlex
 import os
 
-import image_downloader
-from logger import logger
+from image_downloader import main as image_downloader_main
+from .logger import logger
 
 
 class DialogAbout(QDialog, Ui_Dialog_about):
@@ -93,7 +93,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def gen_config_from_ui(self):
 
-        config = utils.AppConfig()
+        config = AppConfig()
 
         """ Engine """
         if self.radioButton_google.isChecked():
@@ -136,10 +136,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """ Keywords List """
         if self.checkBox_from_file.isChecked():
             str_path = self.lineEdit_path2file.text()
-            keywords_list = utils.gen_keywords_list_from_file(str_path)
+            keywords_list = gen_keywords_list_from_file(str_path)
         else:
             str_keywords = self.lineEdit_keywords.text()
-            keywords_list = utils.gen_keywords_list_from_str(str_keywords, ",")
+            keywords_list = gen_keywords_list_from_str(str_keywords, ",")
 
         return config, keywords_list
 
@@ -187,7 +187,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.progressBar_current.setValue(0)
             self.progressBar_current.setFormat(keywords + ", %p%, %v/%m")
 
-            thread_download = Thread(target=image_downloader.main, args=[
+            thread_download = Thread(target=image_downloader_main, args=[
                                      shlex.split(str_paras)])
             thread_download.start()
 

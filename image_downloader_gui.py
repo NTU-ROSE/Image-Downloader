@@ -4,7 +4,7 @@
 
 from __future__ import print_function
 import sys
-from mainwindow import MainWindow
+from GUI.mainwindow import MainWindow
 from PyQt5.Qt import QApplication
 import chromedriver_autoinstaller
 
