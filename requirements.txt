@@ -3,3 +3,4 @@ PySocks
 requests
 selenium
 PyQt5
+chromedriver-autoinstaller

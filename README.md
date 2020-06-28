@@ -1,9 +1,5 @@
 # Image Downloader
 
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
-
-## [中文说明](https://github.com/sczhengyabin/Image-Downloader/blob/master/README_zh.md)
-
 ## 1. Introdoction
 
 Crawl and download images using Selenium
@@ -20,10 +16,6 @@ Using python3 and PyQt5
 + CMD and GUI ways of using are provided.
 
 ## 3. Install
-
-### 3.1 Download and install Python3.5+
-
-+ Download Latest version of Python3.5 installer from [here](https://www.python.org/downloads/)
 
 ### 3.2 Download and setup chromedriver [recommend]
 

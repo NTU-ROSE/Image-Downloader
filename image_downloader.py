@@ -10,6 +10,8 @@ import crawler
 import downloader
 import sys
 
+import chromedriver_autoinstaller
+
 
 def main(argv):
     parser = argparse.ArgumentParser(description="Image Downloader")
@@ -61,4 +63,5 @@ def main(argv):
 
 
 if __name__ == '__main__':
+    chromedriver_autoinstaller.install()
     main(sys.argv[1:])
