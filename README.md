@@ -57,6 +57,9 @@ usage: image_downloader.py [-h] [--engine {Google,Bing,Baidu}]
                            [--proxy_http PROXY_HTTP]
                            [--proxy_socks5 PROXY_SOCKS5]
                            keywords
+
+## Example
+python image_downloader.py  -o /Users/linshan/Downloads/  -n 200 "Face Mask"
 ```
 
 ## License
